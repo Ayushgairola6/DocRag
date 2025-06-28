@@ -1,7 +1,7 @@
-import { motion, useScroll } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const Marquee = () => {
-    const { scrollYProgress } = useScroll();
+    // const { scrollYProgress } = useScroll();
 
     return (<>
         <motion.div className="flex items-center justify-center py-2 px-2 overflow-x-hidden gap-5 bai-jamjuree-bold uppercase bg-black my-3">

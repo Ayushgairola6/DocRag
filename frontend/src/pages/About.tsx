@@ -1,4 +1,3 @@
-import React from 'react';
 
 import { FiArrowUpRight, FiUploadCloud, FiHelpCircle, FiMessageSquare, FiUsers } from 'react-icons/fi';
 import { motion } from 'framer-motion'; // Assuming you're using Framer Motion

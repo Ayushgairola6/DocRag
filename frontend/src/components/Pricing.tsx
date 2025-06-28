@@ -24,7 +24,7 @@ const Pricing = () => {
             answer: "The open-source version has all core features but lacks premium support and private document handling."
         }
     ];
-    const [show, setShow] = useState(null);
+    const [show, setShow] = useState<Number>(0);
 
     return (<>
         <div className="relative py-20 px-4 sm:px-6 z-[1] overflow-hidden bg-gray-50">
@@ -179,7 +179,7 @@ const Pricing = () => {
                     {faqs.map((faq, index) => (
                         <div key={index} onClick={() => {
                             if (faq.id === show) {
-                                setShow(null)
+                                setShow(0)
                             } else {
                                 setShow(faq.id);
                             }

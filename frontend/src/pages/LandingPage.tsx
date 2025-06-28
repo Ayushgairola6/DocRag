@@ -7,9 +7,10 @@ import research from '../assets/research.jpg';
 import brain from '../assets/brain.jpg'
 import Testimonials from "@/components/Testimonials";
 import { Link } from 'react-router';
-import { useRef } from 'react';
-import { motion, useScroll } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Marquee from '@/components/marquee';
+
+
 const LandingPage = () => {
     return (<>
         <div className="relative flex items-center justify-center flex-wrap max-w-screen min-h-screen w-full overflow-hidden bg-gray-50 z-[1]">

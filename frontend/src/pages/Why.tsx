@@ -9,30 +9,31 @@ import { FiUploadCloud } from "react-icons/fi";
 
 const Why = () => {
 
-    const Cardsdata = [
-        {
-            heading: "Purpose",
-            icon: <FiZap />,
-            desc: "Break down knowledge barriers. Get instant, accurate answers across AI, Law, Finance, and more—without sifting through endless articles or paywalls."
-        },
-        {
-            heading: "Why Open-Source?",
-            icon: <FaGitAlt />,
-            desc: "Traditional knowledge tools are siloed. Eureka evolves with community contributions—every upload makes the AI smarter for everyone."
-        },
-        {
-            heading: "The Problem We Solve",
-            icon: <MdOutlineHourglassEmpty />,
-            desc: "87% of professionals waste time verifying outdated info. Eureka combines verified sources + community insights for reliable, up-to-date answers."
-        },
-        {
-            heading: "How It Works",
-            icon: <FiUploadCloud />,
-            desc: "  1. Ask a question → 2. AI retrieves answers → 3. Missing something?to teach Eureka."
-        }
+    // const Cardsdata = [
+    //     {
+    //         heading: "Purpose",
+    //         icon: <FiZap />,
+    //         desc: "Break down knowledge barriers. Get instant, accurate answers across AI, Law, Finance, and more—without sifting through endless articles or paywalls."
+    //     },
+    //     {
+    //         heading: "Why Open-Source?",
+    //         icon: <FaGitAlt />,
+    //         desc: "Traditional knowledge tools are siloed. Eureka evolves with community contributions—every upload makes the AI smarter for everyone."
+    //     },
+    //     {
+    //         heading: "The Problem We Solve",
+    //         icon: <MdOutlineHourglassEmpty />,
+    //         desc: "87% of professionals waste time verifying outdated info. Eureka combines verified sources + community insights for reliable, up-to-date answers."
+    //     },
+    //     {
+    //         heading: "How It Works",
+    //         icon: <FiUploadCloud />,
+    //         desc: "  1. Ask a question → 2. AI retrieves answers → 3. Missing something?to teach Eureka."
+    //     }
 
 
-    ]
+    // ]
+    
     return (<>
         <div className="relative min-h-screen py-16 px-4 sm:px-6 z-[1] overflow-hidden">
             {/* Enhanced gradient background */}

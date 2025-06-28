@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Toaster, toast } from 'sonner';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 // import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -17,21 +17,12 @@ function Interface() {
   const [question, setQuestion] = useState<string>('');
   const [answer, setAnswer] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
-  const [currentDbName, setCurrentDbName] = useState<string>('');
+  // const [currentDbName, setCurrentDbName] = useState<string>('');
   const [isVisible, setIsVisible] = useState(false)
   const [category, setCategory] = useState<string>('');
   const [shhowUserForm, setShowUserForm] = useState<boolean>(false);
 
 
-
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files && event.target.files[0]) {
-      setSelectedFile(event.target.files[0]);
-      setAnswer('');
-      setCurrentDbName('');
-      toast(`📄 File Selected: ${event.target.files[0].name}`);
-    }
-  };
 
   const handleUpload = async (UserData: FormData) => {
     if (!selectedFile || category === " " || !UserData) {
@@ -43,9 +34,9 @@ function Interface() {
     const formData = new FormData();
     formData.append('file', selectedFile);
     formData.append("category", category);
-    formData.append("name", UserData.get('name') as string);
-    formData.append("email", UserData.get('email') as string);
-    formData.append("feedback", UserData.get('feedback') as string);
+    formData.append("name", UserData.get("name") as string);
+    formData.append("email", UserData.get("email") as string);
+    formData.append("feedback", UserData.get("feedback") as string);
 
 
     try {
@@ -58,7 +49,7 @@ function Interface() {
       const data = await response.json();
 
       if (response.ok) {
-        setCurrentDbName(data.db_name);
+        // setCurrentDbName(data.db_name);
         toast(`✅ ${data.message}`);
       } else {
         toast(`❌ ${data.error || 'Failed to upload PDF.'}`);
@@ -90,7 +81,7 @@ function Interface() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ question: question,category }),
+        body: JSON.stringify({ question: question, category }),
       });
 
       const data = await response.json();
@@ -110,20 +101,12 @@ function Interface() {
 
   // state reset function handler that hides any toast or drop down when user clicks anywhere on screen
 
-  const handleTouchOutpuy = () => {
-    if (isVisible === true) {
-      setIsVisible(false);
-    }
-    if (shhowUserForm === true) {
-      setShowUserForm(false);
-    }
-  }
 
 
   return (
     <div className="container mx-auto p-4 md:p-8 min-h-screen flex flex-col items-center justify-center  dark:bg-gray-900 text-gray-900 dark:text-gray-50 z-[1] relative">
       {/* draggable question mark */}
-      <motion.ul className='p-4 bg-gray-300 rounded-full CustPoint z-[0]' drag transition={{duration:Infinity}} whileDrag={{scale:0}} dragConstraints={{left:0 }}><BiQuestionMark size={100}/></motion.ul>
+      <motion.ul className='p-4 bg-gray-300 rounded-full CustPoint z-[0]' drag transition={{ duration: Infinity }} whileDrag={{ scale: 0 }} dragConstraints={{ left: 0 }}><BiQuestionMark size={100} /></motion.ul>
       {/* the dropdown */}
       <div className="z-[-1] absolute top-0 left-0 h-full w-full bg-gradient-to-br from-lime-400/15 to-red-400/15 blur-xl "></div>
       <UserForm setShowUserForm={setShowUserForm} shhowUserForm={shhowUserForm} selectedFile={selectedFile} setSelectedFile={setSelectedFile} handleUpload={handleUpload} loading={loading} />
