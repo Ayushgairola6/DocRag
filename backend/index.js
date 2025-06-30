@@ -7,7 +7,8 @@ import cors from 'cors';
 
 
 app.use(cors({
-    origin:"http://localhost:5173"
+    origin:["http://localhost:5173","https://eureka-six-eta.vercel.app"],
+    allowedHeaders:["Access-Control-Allow-Origin"]
 }))
 app.use(express.json());
 app.use(express.urlencoded());
