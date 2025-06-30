@@ -40,7 +40,7 @@ function Interface() {
 
 
     try {
-      const response = await fetch('http://localhost:1000/api/upload-pdf', {
+      const response = await fetch('https://eureka-7ks7.onrender.com/api/upload-pdf', {
         method: 'POST',
         body: formData,
 
@@ -76,7 +76,7 @@ function Interface() {
     setLoading(true);
     setAnswer('');
     try {
-      const response = await fetch('http://localhost:1000/api/ask-pdf', {
+      const response = await fetch('https://eureka-7ks7.onrender.com/api/ask-pdf', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
