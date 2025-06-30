@@ -1,6 +1,6 @@
 import  { useState } from 'react';
 import { Toaster, toast } from 'sonner';
-import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 // import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -72,7 +72,7 @@ function Interface() {
     //   toast("Please choose a category !");
     //   return;
     // }
-
+// https://eureka-7ks7.onrender.com
     setLoading(true);
     setAnswer('');
     try {
@@ -104,7 +104,7 @@ function Interface() {
 
 
   return (
-    <div className="container mx-auto p-4 md:p-8 min-h-screen flex flex-col items-center justify-center  dark:bg-gray-900 text-gray-900 dark:text-gray-50 z-[1] relative">
+    <div className=" mx-auto p-4 md:p-8 min-h-screen flex flex-col items-center justify-center  dark:bg-gray-900 text-gray-900 dark:text-gray-50 z-[1] relative">
       {/* draggable question mark */}
       
       {/* the dropdown */}
@@ -121,12 +121,7 @@ function Interface() {
 
       {/* rest of the page */}
       <Card className="w-full max-w-2xl shadow-lg  bg-gray-100">
-        <CardHeader>
-          {/* <CardTitle className="text-3xl font-bold text-center">Summarizer</CardTitle> */}
-          <CardDescription className="text-center text-xs text-black bai-jamjuree-regular">
-            Upload a PDF document for contribution and ask question about any topic !
-          </CardDescription>
-        </CardHeader>
+        
         <CardContent>
           <div className="space-y-6">
 
@@ -144,10 +139,10 @@ function Interface() {
                 onChange={(e) => setQuestion(e.target.value)}
                 rows={4}
                 // disabled={!currentDbName}
-                className="resize-none disabled:opacity-70 space-grotesk text-xs md:text-sm"
+                className="resize-none disabled:opacity-70 space-grotesk text-sm md:text-md"
               />
               <motion.button whileTap={{ scale: 1.03 }} whileHover={{ scaleX: 1.05 }} onClick={handleAsk} className='cursor-pointer bg-black w-full p-2 rounded-lg space-grotesk text-white text-sm' >
-                {loading ? 'Reading docs..' : 'Ask Question'}
+                {loading ? '.....' : 'Ask Question'}
               </motion.button>
               {/* {!currentDbName && (
                 <p className="text-sm text-red-500">Please upload and process a PDF before asking questions.</p>
@@ -156,10 +151,10 @@ function Interface() {
 
             {/* Answer Display Section */}
             {answer && (
-              <div className="grid w-full items-center gap-1.5 mt-4 overflow-y-scroll h-[50vh]">
-                <Label className='space-grotesk font-bold'>Response</Label>
-                <Card className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md shadow-inner">
-                  <p className={`text-sm text-gray-800 dark:text-gray-200 whitespace-pre-wrap bai-jamjuree-regular  `}>{answer ? answer : "Answers will appear here"}</p>
+              <div className="grid w-full items-center gap-5 mt-4 overflow-y-scroll max-h-[50vh]">
+                <Label className='space-grotesk text-sm font-semibold'>Response !</Label>
+                <Card className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md shadow-inner border border-black">
+                  <p className={`text-sm text-gray-800 dark:text-gray-200 whitespace-pre-wrap bai-jamjuree-regular  `}> {answer ? answer : "Do you have any questions for me today?"}</p>
                 </Card>
               </div>
             )}

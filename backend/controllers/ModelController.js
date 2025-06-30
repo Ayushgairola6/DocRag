@@ -37,7 +37,7 @@ export const GenerateResponse = async (question, data) => {
         });
 
         const responseText = result.text;
-        console.log(responseText)
+        // console.log(responseText)
         if (!responseText) {
             return { error: "I am having some issues right now, can we talk later, I am really sorry for this issue, thanks for understanding me " }
         }

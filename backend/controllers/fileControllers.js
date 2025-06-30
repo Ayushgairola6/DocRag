@@ -134,7 +134,6 @@ export const FindMatchingResponse = async (req, res) => {
                 topK: 2,
                 inputs: { text: question },
                  filter: {
-                    // Remove the "metadata" nesting level
                     "category": { "$eq": category }
                 }
             },
