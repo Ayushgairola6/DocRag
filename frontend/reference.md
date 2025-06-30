@@ -1,19 +1,4 @@
-import Why from './Why';
-import Pricing from '@/components/Pricing';
-import { FiArrowUpRight } from 'react-icons/fi';
-// import Footer from '@/components/Footer';
-import study from '../assets/study.jpg';
-import research from '../assets/research.jpg';
-import brain from '../assets/brain.jpg'
-import Testimonials from "@/components/Testimonials";
-import { Link } from 'react-router';
-import { motion } from 'framer-motion'
-import Marquee from '@/components/marquee';
-
-
-const LandingPage = () => {
-    return (<>
-        <div className="relative flex items-center justify-center flex-wrap max-w-screen min-h-screen w-full overflow-hidden bg-gray-50 z-[1]">
+<div className="relative flex items-center justify-center flex-wrap max-w-screen min-h-screen w-full overflow-hidden bg-gray-50 z-[1]">
             <div className='h-full w-full absolute z-[-1] bg-gradient-to-br from-gray-50 to-emerald-600/10 blur-3xl'>
             </div>
             {/* Abstract 3D Background (Framer-like) */}
@@ -67,7 +52,7 @@ const LandingPage = () => {
                     <h1 className="space-grotesk text-4xl md:text-5xl lg:text-7xl font-bold text-center text-gray-800 md:text-black">The Open source , <span className="cursor-pointer text-transparent bg-clip-text bg-gradient-to-r from-black/90 to-purple-700/90">Community</span> driven , Custom knowledge based agent</h1>
                     <h2 className="bai-jamjuree-light text-xs md:text-lg text-center text-gray-500 ">With the help of <Link to="/Interface" className='text-transparent bg-clip-text bg-gradient-to-r from-black/90 to-purple-700/90 font-bold '>EUREKA</Link> anyone can obtain information about any topic based on the data uploaded and verified by community members , making information access and sharing much easier and faster .</h2>
                     {/* cta button */}
-                    <motion.ul whileHover={{ scale: 1.05, transform: "translateX(50px)" }} transition={{ duration: 0.6 ,ease:"circInOut"}} whileTap={{ scale: 1.09 ,transform:"translateX(40px)"}} >
+                    <motion.ul whileHover={{ scale: 1.05, transform: "translateX(50px)" }} transition={{ duration: 0.6 }} whileTap={{ scale: 1.09 }}>
                         <Link
                             to="/Interface" className=' p-3  overflow-x-hidden  rounded-lg bg-black text-white space-grotesk flex items-center justify-center gap-2 mt-10 CustPoint     transition-all duration-500 '>Get Started <ul  ><FiArrowUpRight className='' /></ul></Link>
                     </motion.ul>
@@ -80,19 +65,3 @@ const LandingPage = () => {
 
 
         </div>
-
-        <Why />
-        <Testimonials />
-        <Pricing />
-        <Marquee />
-
-    </>
-    );
-};
-
-export default LandingPage;
-
-// <Why />
-//         <Testimonials />
-//         <Pricing />
-

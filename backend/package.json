@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "build":"npm install",
     "start": "node index"
   },
   "author": "ayush_gairola",

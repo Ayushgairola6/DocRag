@@ -3,7 +3,7 @@ import {
     FiLock,
     FiChevronDown
 } from 'react-icons/fi';
-
+import { motion } from 'framer-motion'
 import { useState } from 'react';
 const Pricing = () => {
 
@@ -45,12 +45,12 @@ const Pricing = () => {
 
             {/* Pricing cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                
+
                 {/* Free Tier */}
                 <div className="group relative p-8 bg-white/90 backdrop-blur-sm rounded-xl border border-gray-200/80 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ">
-                 {/* accent gradient background */}
-              <div className="absolute top-0 left-0 h-full w-full rounded-xl bg-gradient-to-br from-purple-600/20 to-lime-600/20 blur-3xl z-[-1]"></div>
-                {/* rest of the info */}
+                    {/* accent gradient background */}
+                    <div className="absolute top-0 left-0 h-full w-full rounded-xl bg-gradient-to-br from-purple-600/20 to-lime-600/20 blur-3xl z-[-1]"></div>
+                    {/* rest of the info */}
                     <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-purple-500/30 transition-all duration-500 pointer-events-none"></div>
 
                     <div className="mb-6">
@@ -89,9 +89,9 @@ const Pricing = () => {
 
                 {/* Pro Tier (Featured) */}
                 <div className="group relative p-8 bg-white/90 backdrop-blur-sm rounded-xl border-2 border-purple-500/60 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 transform ">
-                {/* accent gradient background */}
-              <div className="absolute top-0 left-0 h-full w-full rounded-xl bg-gradient-to-br from-purple-600/20 to-lime-600/20 blur-3xl z-[-1]"></div>
-                {/* rest of the info */}
+                    {/* accent gradient background */}
+                    <div className="absolute top-0 left-0 h-full w-full rounded-xl bg-gradient-to-br from-purple-600/20 to-lime-600/20 blur-3xl z-[-1]"></div>
+                    {/* rest of the info */}
                     <div className="absolute -top-3 right-6 bg-gradient-to-r from-purple-600 to-blue-600 text-white text-xs bai-jamjuree-medium px-3 py-1 rounded-full">
                         Most Popular
                     </div>
@@ -132,9 +132,9 @@ const Pricing = () => {
 
                 {/* Enterprise Tier */}
                 <div className="group relative p-8 bg-white/90 backdrop-blur-sm rounded-xl border border-gray-200/80 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                 {/* accent gradient background */}
-              <div className="absolute top-0 left-0 h-full w-full rounded-xl bg-gradient-to-br from-purple-600/20 to-lime-600/20 blur-3xl z-[-1]"></div>
-                {/* rest of the info */}
+                    {/* accent gradient background */}
+                    <div className="absolute top-0 left-0 h-full w-full rounded-xl bg-gradient-to-br from-purple-600/20 to-lime-600/20 blur-3xl z-[-1]"></div>
+                    {/* rest of the info */}
                     <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-blue-500/30 transition-all duration-500 pointer-events-none"></div>
 
                     <div className="mb-6">
@@ -175,23 +175,26 @@ const Pricing = () => {
             <div className="max-w-3xl mx-auto mt-20">
                 <h3 className="bai-jamjuree-semibold text-2xl mb-8 text-center">Frequently Asked Questions</h3>
 
-                <div className="space-y-4">
+                <div className="space-y-4 ">
                     {faqs.map((faq, index) => (
-                        <div key={index} onClick={() => {
+                        <motion.div key={index} onClick={() => {
                             if (faq.id === show) {
                                 setShow(0)
                             } else {
                                 setShow(faq.id);
                             }
-                        }} className={`border-b border-gray-200 pb-4 ${show === faq.id ? "h-auto px-4 py-4" : "h-8 p-0  overflow-hidden"} transition-all duration-500   rounded-lg  bai-jamjuree-regular`}>
-                            <button className="flex justify-between items-center w-full space-grotesk-medium text-left cursor-pointer">
-                                <span>{faq.question}</span>
-                                <FiChevronDown className={`text-purple-600 transition-transform duration-300 ${show===faq.id?"rotate-45":"rotate-0"} `} />
-                            </button>
-                            <div className="mt-2 space-grotesk text-gray-600 text-sm">
-                                {faq.answer}
+                        }} className={` border-b border-gray-200 pb-4  transition-all duration-500   rounded-lg  bai-jamjuree-regular`}>
+                            <div className={`${show === faq.id ? "h-10 p-3 mb-8" : "h-5 overflow-hidden p-0 mb-0"} transition-all duration-300 `}>
+                                <button className="flex justify-between items-center w-full space-grotesk-medium text-left cursor-pointer">
+                                    <span>{faq.question}</span>
+                                    <FiChevronDown className={`text-purple-600 transition-transform duration-300 ${show === faq.id ? "rotate-45" : "rotate-0"} `} />
+                                </button>
+                                <div className={`mt-2 space-grotesk ${show===faq.id?"text-purple-600":"text-gray-400"} text-sm`}>
+                                    {faq.answer}
+                                </div>
                             </div>
-                        </div>
+
+                        </motion.div>
                     ))}
                 </div>
             </div>

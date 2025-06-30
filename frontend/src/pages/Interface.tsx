@@ -8,7 +8,7 @@ import DropDown from '../components/dropdown';
 import UserForm from '../components/ui/userDetail';
 import { BrainCircuit } from 'lucide-react';
 import { motion } from 'framer-motion'
-import { BiQuestionMark } from 'react-icons/bi';
+// import { BiQuestionMark } from 'react-icons/bi';
 // import Dispatch from 'react';
 // import SetStateAction
 
@@ -106,13 +106,13 @@ function Interface() {
   return (
     <div className="container mx-auto p-4 md:p-8 min-h-screen flex flex-col items-center justify-center  dark:bg-gray-900 text-gray-900 dark:text-gray-50 z-[1] relative">
       {/* draggable question mark */}
-      <motion.ul className='p-4 bg-gray-300 rounded-full CustPoint z-[0]' drag transition={{ duration: Infinity }} whileDrag={{ scale: 0 }} dragConstraints={{ left: 0 }}><BiQuestionMark size={100} /></motion.ul>
+      
       {/* the dropdown */}
       <div className="z-[-1] absolute top-0 left-0 h-full w-full bg-gradient-to-br from-lime-400/15 to-red-400/15 blur-xl "></div>
       <UserForm setShowUserForm={setShowUserForm} shhowUserForm={shhowUserForm} selectedFile={selectedFile} setSelectedFile={setSelectedFile} handleUpload={handleUpload} loading={loading} />
 
       {/* the user form for contribution details */}
-      <DropDown isVisible={isVisible} setIsVisible={setIsVisible} setCategory={setCategory} />
+      <DropDown isVisible={isVisible} setIsVisible={setIsVisible} setCategory={setCategory} category={category} />
 
 
 
